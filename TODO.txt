@@ -1,0 +1,15 @@
+monitoring dashboard
+- email warning integration
+- store metrics after container is torn down
+- lightweight/low polling
+- 
+
+readme
+launchsettings.json / config.json
+
+multi server scalability: try to use a tool for this
+
+call start docker from ps script
+
+
+
