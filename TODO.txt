@@ -9,7 +9,7 @@ launchsettings.json / config.json
 
 multi server scalability: try to use a tool for this
 
-call start docker from ps script
 
+world download into timestamped zip 
 
 
