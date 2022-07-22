@@ -1,25 +1,28 @@
-#tear down container while testing 
-#docker rm /mc
-
 # start docker if not running
 $PSScriptRoot
 & "$PSScriptRoot\helper_scripts\start_docker.ps1"
 
-# i guess this is intended to fail if mc is already created\
-#replace this line with line calling docker compose
-#TODO: fail with a good error message or just call start and exit
-#accept eula
-docker run -e EULA=TRUE -d -p 25565:25565 --name mc itzg/minecraft-server
+#TODO: fail with a good error message if mc exists or just call start and exit
+#docker run -e EULA=TRUE -d -p 25565:25565 --name mc itzg/minecraft-server
 
-#need to call docker volume create minecraftdata
-docker-compose up -d --force-recreate
+#need this for first time
+$Folder = 'C:\Users\jos\Minecraft' #works just for me
+if (Test-Path -Path $Folder) {
+    mkdir Minecraft #create folder for volumes to live in
+    Set-Location Minecraft
+    docker volume create minecraftdata #i guess this workss
+    Set-Location .. #navigate back up
+}
+
+docker-compose up -d --force-recreate # not sure if -p works
+
 #upload desired world if present
-#ask for confirmation
-Write-Output "Paste in world folder into upload_world"
+Write-Output "Paste in world folder into upload_world"#ask for confirmation
 $uploadTrue= Read-Host -Prompt "Type y to upload world file"
 
 if("y" -eq $uploadTrue)
 {
+    #this might only work after the server is spinned up
     $PSScriptRoot
     & "$PSScriptRoot\helper_scripts\upload_world.ps1"
 }
