@@ -16,6 +16,9 @@ world download into timestamped zip
 
 create our own docker image
 
+IF a homeserver is made, made ps1 script to request home sever to start the server
+ssh in, send 1 command, ssh out
+
 figure out baseline requirement to start project
 
 working config:

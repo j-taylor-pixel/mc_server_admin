@@ -6,15 +6,11 @@ $PSScriptRoot
 #docker run -e EULA=TRUE -d -p 25565:25565 --name mc itzg/minecraft-server
 
 #need this for first time
-$Folder = 'C:\Users\jos\Minecraft' #works just for me
-if (Test-Path -Path $Folder) {
-    mkdir Minecraft #create folder for volumes to live in
-    Set-Location Minecraft
-    docker volume create minecraftdata 
-    #i think this is in the local directory instead of jos/minecraft/minecraftdata
-    #need to fix
-    Set-Location .. #navigate back up
-}
+mkdir Minecraft #create folder for volumes to live in
+Set-Location Minecraft
+docker volume create minecraftdata 
+Set-Location .. #navigate back up 
+
 
 docker-compose up -d --force-recreate # not sure if -p works
 
