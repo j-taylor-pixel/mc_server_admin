@@ -6,10 +6,32 @@ monitoring dashboard
 
 readme
 launchsettings.json / config.json
+-server name
+-common settings in easy to change format
+
+-way for these settings to get pushed to the actual server
 
 multi server scalability: try to use a tool for this
 
-
 world download into timestamped zip 
+
+create our own docker image
+
+use a docker compose file
+
+figure out baseline requirement to start project
+
+#useful commands
+netstat -a -n -o
+docker inspect -f "{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}" mc
+
+working config:
+port forwarded the host device ip address:
+
+windows firewall inbound and outbound made for 25565
+inbound for docker desktop too //not sure if neccessary
+
+connected to ipconfig wireless lan adapter wifi: ipv4 address
+
 
 
