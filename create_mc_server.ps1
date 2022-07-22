@@ -10,7 +10,9 @@ $Folder = 'C:\Users\jos\Minecraft' #works just for me
 if (Test-Path -Path $Folder) {
     mkdir Minecraft #create folder for volumes to live in
     Set-Location Minecraft
-    docker volume create minecraftdata #i guess this workss
+    docker volume create minecraftdata 
+    #i think this is in the local directory instead of jos/minecraft/minecraftdata
+    #need to fix
     Set-Location .. #navigate back up
 }
 

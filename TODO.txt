@@ -24,5 +24,7 @@ windows firewall inbound and outbound made for 25565
 inbound for docker desktop too //not sure if neccessary
 connected to ipconfig wireless lan adapter wifi: ipv4 address
 
-
+useful commands:
+go into server cli
+docker exec -i mc rcon-cli #untested ctrld to exit
 
